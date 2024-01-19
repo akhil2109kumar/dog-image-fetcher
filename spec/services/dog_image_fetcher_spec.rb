@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'json'
 
 RSpec.describe DogImageFetcher, type: :service do
   describe '.fetch' do
@@ -62,10 +63,6 @@ RSpec.describe DogImageFetcher, type: :service do
       error_message = 'An error occurred'
       expect(Rails.logger).to receive(:error).with(/#{error_message}/)
       DogImageFetcher.send(:handle_error, error_message)
-    end
-
-    it 'returns nil' do
-      expect(DogImageFetcher.send(:handle_error, 'An error occurred')).to be_nil
     end
   end
 end

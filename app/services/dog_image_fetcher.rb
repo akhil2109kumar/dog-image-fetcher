@@ -16,14 +16,11 @@ class DogImageFetcher
   def self.handle_response(response)
     if response.code == 200
       JSON.parse(response.body)['message']
-    else
-      nil
     end
   end
 
   def self.handle_error(message)
     Rails.logger.error(message)
-    nil
   end
 end
 
