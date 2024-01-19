@@ -30,6 +30,15 @@ This is a simple application that allows users to fetch random dog images associ
   ```
   bundle install
   ```
+* Create database
+  ```
+  rake db:create
+  ```
+  
+* Run migration
+  ```
+  rake db:migrate
+  ```
 
 * Copy application.yml.sample in application.yml 
   ```
